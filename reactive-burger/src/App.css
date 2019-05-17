@@ -6,7 +6,7 @@
   #f06d06)
 }
 
-button{
+button {
   margin-top: 20px;
   border-radius: 10px;
 }
@@ -39,4 +39,12 @@ button{
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.bold {
+  font-weight: bold;
+}
+.red {
+  color: red;
 }

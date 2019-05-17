@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
-
+import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
   
@@ -60,7 +60,11 @@ class App extends Component {
     let persons = null;
     const buttonStyle = {
       backgroundColor: 'green',
-      color: 'white'
+      color: 'white',
+      ':hover': {
+        backgroundColor: 'black',
+        color: 'gray'
+      }
     };
 
     const classes = [];
@@ -88,7 +92,7 @@ class App extends Component {
     }
 
     return (
-      
+      <StyleRoot>
     <div className="App">
 
       <p className={classes.join(' ')}>Helllo Motto!</p>
@@ -113,9 +117,9 @@ class App extends Component {
         </a>
       </header>
     </div>
-  
+    </StyleRoot>
   );
 }
 }
 
-export default App;
+export default Radium(App);
