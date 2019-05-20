@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import cssClasses from './App.css';
 import Person from './Person/Person';
+
 
 
 class App extends Component {
@@ -63,11 +64,11 @@ class App extends Component {
       color: 'white'
     };
 
-    const classes = [];
+    const appliedClasses = [];
 
     if (this.state.persons.length===1){
-      classes.push('red');
-      classes.push('bold');
+      appliedClasses.push('red');
+      appliedClasses.push('bold');
     }
     
     if (this.state.show) {
@@ -89,23 +90,23 @@ class App extends Component {
 
     return (
       
-    <div className="App">
+    <div className={cssClasses.App}>
 
-      <p className={classes.join(' ')}>Helllo Motto!</p>
+      <p className={appliedClasses.join(' ')}>Helllo Motto!</p>
 
       <button 
-        className=""
+        className={appliedClasses}
         style={buttonStyle}       
         onClick={this.toggleShow}>switch my personality</button>
      
        {persons}
      
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className={cssClasses.Appheader}>
+        <img src={logo} className={cssClasses.Applogo} alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a className="App-link"
+        <a className={cssClasses.Applink}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer">

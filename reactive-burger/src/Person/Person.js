@@ -1,5 +1,5 @@
 import React from 'react';
-import './Person.css';
+import classes from './Person.css';
 
 const Person = (props) => {
 
@@ -9,7 +9,7 @@ const Person = (props) => {
     }
 
     return (
-        <div className='Person'>
+        <div className={classes.Person}>
             <p onClick={props.click}>This is a {props.name}, {props.age} age, {Math.random()*30}</p>
             <p>Child: {props.children}</p>
             <button style={style}>Personal Act</button>
