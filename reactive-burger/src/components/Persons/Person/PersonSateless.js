@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Person.css';
 
 const Person = (props) => {
-
+    console.log('person js render');
     const style ={
         color: 'red',
         backgroundColor: 'blue'

@@ -1,0 +1,81 @@
+.Person {
+    height: 14rem;
+    width: 50%;
+    margin: 10px auto 10px auto;
+    border: solid 2px green;
+    border-radius: 30px;
+    box-shadow: 30px;
+    overflow: auto
+}
+
+.Person p{
+    cursor: pointer;
+    background: linear-gradient(#e66465, #9198e5);
+    margin:10px;
+    padding: 5px;
+    border-radius: 10px;
+    display: block;
+}
+
+.Person button{
+    padding: 10px;
+}
+.Person button:focus{
+    outline: none;
+}
+
+.Person input {
+    border-radius: 10px;
+}
+
+.Person input:focus{
+    outline: none;
+}
+
+.slidecontainer {
+    width: 90%; /* Width of the outside container */
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1rem;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 1rem;
+    margin: auto;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .Person {
+        width: 400px;
+    }
+}
