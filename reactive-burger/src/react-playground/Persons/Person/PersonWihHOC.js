@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import classes from './Person.css';
+import Aux from '../../hoc/Auxiliary';
 
-class Person extends Component {
+class Person extends PureComponent {
     
     scrollingListener(event) {
         console.log('scrolling');
@@ -28,7 +29,8 @@ class Person extends Component {
     }
 
     return (
-        <div className={classes.Person} onScroll={this.scrollingListener}>
+        //<!-- we can use React.Fragment instead of HOC Aux-->
+        <Aux className={classes.Person} onScroll={this.scrollingListener}>
             <p onClick={this.props.click}>This is a {this.props.name}, {this.props.age} age, {Math.random()*30}</p>
             <p>Child: {this.props.children}</p>
             <button style={style}>Personal Act</button>
@@ -36,7 +38,7 @@ class Person extends Component {
             <div className={classes.slidecontainer} >
                 <input className={classes.slider} onChange={this.sliderChange} id="foo" type="range" />
             </div>    
-        </div>    
+        </Aux>    
     );
     }
 }

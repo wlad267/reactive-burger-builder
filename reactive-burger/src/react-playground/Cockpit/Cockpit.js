@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classes from './Cockpit.css'
+import AuthContext from '../../context/context';
+
 
 const Cockpit = (props) => {
     const appliedClasses = [];
@@ -33,8 +35,18 @@ const Cockpit = (props) => {
             <button 
             className={appliedClasses}
             onClick={props.toggleShow}>The same switch but diffrently styled</button>
+
+            <AuthContext.Consumer>
+                {
+                    context =>  
+                            <button className={appliedClasses}
+                                         onClick={context.login}>Login</button>
+                }
+            </AuthContext.Consumer>
+           
+           
         </div>  
     );
 }
 
-export default Cockpit;
+export default React.memo(Cockpit);
