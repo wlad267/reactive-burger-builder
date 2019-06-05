@@ -1,9 +1,10 @@
 .App {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 10px;
   background: radial-gradient( circle,
   yellow,
-  #f06d06)
+  #f06d06);
+  height: 100vh;
 }
 
 button {
