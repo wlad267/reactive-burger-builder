@@ -2,12 +2,13 @@
     position: fixed;
     z-index: 500;
     background-color: white;
-    width: 70%;
+    width: 90%;
+    height: 70vh;
     border: 2px #eee;
     box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.3);
     padding: 16px;
     left: 15%;
-    top: 20%;
+    top: 20vh;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
 }

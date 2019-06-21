@@ -4,6 +4,8 @@ import Burger from '../../components/Burger/Burger';
 import BurgerControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummay from '../../components/Burger/OrderSummary/OrderSummary';
+import axios from 'axios';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 //ingrediants pices in dolars 
 const INGREDINTET_PRICES ={
@@ -23,7 +25,8 @@ class BurgerBuilder extends React.Component {
         },
         price: 5, //base price is 5$
         purchasable: true,
-        purchasing: false
+        purchasing: false,
+        loading: false
     };
 
     addIngredinentHandler = (type) => {
@@ -69,25 +72,76 @@ class BurgerBuilder extends React.Component {
 
     purchaseContinueHandler = () => {
         console.log('continue with tour burger shopping');
+
+        this.setState({loading: true});
+        
+        const order = {
+            ingredients: this.state.ingredients,
+            price: this.state.price,
+            customer: {
+                name: 'Me',
+                address: {
+                    streat: 'NA'
+                },
+                email: 'wlad267@gmail.com',
+                deliveryMethod: 'PREMIUM'
+            }
+        }
+
+        axios.post('orders', order).then(
+            response => {
+                console.log('posted ok');
+                //add some timeout in order to see the spinner
+                setTimeout( () => {
+                    this.setState({purchasing: false, loading: false});
+                }, 1000);
+              
+            }
+        ).catch(error => {
+            console.log('Please contact your administrator');
+            //add some timeout in order to see the spinner
+            setTimeout( () => {
+                this.setState({purchasing: false, loading: false});
+            }, 1000);
+        });
+    }
+
+    scrolling(event){
+        console.log('burger builder scrolling');
+        event.stopPropagation();
+        event.preventDefault();
     }
 
     render(){
         const disabledInfo ={...this.state.ingredients};
+        
         for (let key in disabledInfo){
            disabledInfo[key] = disabledInfo[key]<=0;
         }
+
+        
+        let modalContent = (
+            <OrderSummay ingredients={this.state.ingredients}
+            totalPrice={this.state.price}
+            purchaseCanceled={this.purchaseCancelHandler}
+            purchaseContinued={this.purchaseContinueHandler}
+            /> 
+        );
+
+        if (this.state.loading){
+            modalContent = (<Spinner />);
+        }
+
         return (
-            <Aux>
+            <Aux onScroll={this.scrolling}>
                 
                 <Modal show={this.state.purchasing} modelClosed={this.purchaseCancelHandler}>
-                    <OrderSummay ingredients={this.state.ingredients}
-                                purchaseCanceled={this.purchaseCancelHandler}
-                                purchaseContinued={this.purchaseContinueHandler}
-                    /> 
+                   {modalContent}
                 </Modal>
             
-                <Burger ingredients={this.state.ingredients} />
-                
+                <div onScroll={this.scrolling}   >
+                     <Burger ingredients={this.state.ingredients} />
+                </div>
                 <BurgerControls 
                         purchasable={this.state.purchasable}
                         price={this.state.price}
