@@ -1,0 +1,50 @@
+.Toast{
+    visibility: visible;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    border-radius: 2px;
+    padding: 10px;
+    position: fixed;
+    z-index: 1;
+    right: 1%;
+    bottom: 30px;
+    font-size: 17px;
+    text-align: left;
+    border-radius: 3rem;
+}
+
+.Close {
+    display: inline-block;
+    margin: 0;
+    width: 10%;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    border-radius: 1rem;
+    vertical-align: middle;
+}
+
+.Close:hover{
+    background-color: #b6afaa;
+    font-weight: bold;
+    margin: 2px solid black;
+}
+
+.Success {
+    background-color: #a4eabf;
+}
+
+.Danger {
+    background-color:#ff8282;
+}
+
+.MessageBody {
+    display: inline-block;
+    width: 90%;
+}
+.MessageBody p {
+    margin: 0 1rem;
+}

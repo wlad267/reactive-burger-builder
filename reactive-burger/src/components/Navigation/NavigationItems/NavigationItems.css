@@ -2,16 +2,20 @@
     margin: 0px;
     padding: 0px;
     list-style: none;
-    display: flex;
     align-items: center;
     height: 100%;
+    display: flex;
+    flex-flow: row;
 }
 
+.VerticalNavigationItmes{
+    flex-flow: column;
+    flex-wrap: wrap;
+}
 
-
-@media(min-width: 500px){
+@media(max-width: 500px){
     .NavigationItmes {
-        flex-flow: row;
+        flex-flow: column;
     }
 
     .VerticalNavigationItmes {

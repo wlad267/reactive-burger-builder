@@ -1,0 +1,16 @@
+.Order {
+    border: 1px solid gray;
+    border-radius: 3rem;
+    margin: 1rem 5rem;
+    box-shadow: 2px 4px 1rem;
+    font-size: 1.2rem;
+    font-style: oblique;
+    
+}
+
+.DeleteIt{
+    position: relative;
+    left: 80%;
+    top: 200%; 
+    width: fit-content;
+}

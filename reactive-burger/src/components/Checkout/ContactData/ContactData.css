@@ -1,0 +1,23 @@
+.ContactData{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    box-shadow: 2px 2px 2px #ccc;
+    border: 1px solid #eee;
+    border-radius: 3rem;
+    box-sizing: border-box;
+}
+
+.ContactData input {
+    width: 50%;
+}
+
+
+.ContactData Button {
+    border: 3px solid gold;
+}
+
+.ContactData Button:hover{
+    border: 3px solid tomato;
+}
+

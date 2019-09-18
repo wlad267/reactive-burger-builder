@@ -12,9 +12,9 @@ const navigationItems = (props) => {
    
     return (
     <ul className={[classes.NavigationItmes, isVertical ? classes.VerticalNavigationItmes : null].join(' ')}>
-        <NavigationItem menuMode={props.menuMode} active link="/" >BurgerBuilder</NavigationItem>
-        <NavigationItem menuMode={props.menuMode} link="/" >CheckOut</NavigationItem>
-        <NavigationItem menuMode={props.menuMode} link="/" >GoAway</NavigationItem>
+        <NavigationItem menuMode={props.menuMode} link="/" >BurgerBuilder</NavigationItem>
+        <NavigationItem menuMode={props.menuMode} link="/orders" >Orders</NavigationItem>
+        <NavigationItem menuMode={props.menuMode} link="/login" >GoAway</NavigationItem>
     </ul>
 )};
 
